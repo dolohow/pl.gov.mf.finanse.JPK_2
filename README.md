@@ -54,5 +54,19 @@ $ flatpak --user remote-add --no-gpg-verify --if-not-exists dolohow local
 
 Install the package:
 ```shell
-flatpak --user install dolohow pl.gov.mf.finanse.JPK_2
+$ flatpak --user install dolohow pl.gov.mf.finanse.JPK_2
+```
+
+
+### Binary Bundle
+You can download bundle from [here](https://github.com/dolohow/pl.gov.mf.finanse.JPK_2/releases)
+
+You can install them by just clicking or use this command:
+```shell
+$ flatpak build-import-bundle local dictionary.flatpak
+```
+
+Where `local` is your repo created by command:
+```shell
+$ flatpak build-import-bundle ~/my-apps dictionary.flatpak
 ```
