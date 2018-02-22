@@ -1,0 +1,38 @@
+{ "app-id": "pl.gov.mf.finanse.JPK_2",
+  "runtime": "org.gnome.Platform",
+  "runtime-version": "3.26",
+  "sdk": "org.gnome.Sdk",
+  "command": "start.sh",
+  "finish-args": [
+     "--socket=x11",
+     "--share=network",
+     "--filesystem=~/JPK:create"
+  ],
+  "modules": [
+    {
+      "name": "JPK",
+      "buildsystem": "simple",
+      "build-commands": [
+        "mv get_file* jpk.sh",
+        "chmod +x jpk.sh",
+        "yes . | ./jpk.sh install",
+        "mkdir -p /app/bin",
+        "cd JPK_Klient_2 && cp -r * /app/bin",
+        "install -Dm644 /app/bin/e_logo.ico /app/share/icons/hicolor/128x128/apps/pl.gov.mf.finanse.JPK_2.ico",
+        "install -Dm644 pl.gov.mf.finanse.JPK_2.desktop /app/share/applications/pl.gov.mf.finanse.JPK_2.desktop"
+      ],
+      "sources": [
+        {
+          "type": "file",
+          "url": "http://www.finanse.mf.gov.pl/c/document_library/get_file?uuid=835cd7d9-4c87-49f3-ae28-10475aa1d289&groupId=766655",
+          "sha256": "6956d9c2e1e587ce33f77e497557c80b512cb1ba0c3d6b4d0512476c309a97cc",
+          "only-arches": ["x86_64"]
+        },
+        {
+          "type": "file",
+          "path": "pl.gov.mf.finanse.JPK_2.desktop"
+        }
+      ]
+    }
+  ]
+}

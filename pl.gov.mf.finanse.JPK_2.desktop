@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Klient JPK 2.0
+Comment=Aplikacja służąca do wysyłki plików JPK
+GenericName=JPK
+Exec=start.sh
+Icon=pl.gov.mf.finanse.JPK_2
+Type=Application
+Categories=Office;
+StartupNotify=true
